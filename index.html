@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cross-Border Payments</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Send Money (INR → USDC)</h1>
+    <div class="card">
+      <form id="form">
+        <input type="number" id="inr" placeholder="Enter INR amount" required />
+        <button type="submit" class="btn">Generate Payment QR</button>
+      </form>
+      <div id="qr"></div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("form").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const inr = document.getElementById("inr").value;
+      const qrDiv = document.getElementById("qr");
+
+      try {
+        const res = await fetch(`http://localhost:3000/pay/${inr}`);
+        const html = await res.text();
+        qrDiv.innerHTML = html;
+      } catch (err) {
+        qrDiv.innerHTML = `<p>Failed to generate QR: ${err.message}</p>`;
+      }
+    });
+  </script>
+</body>
+</html>
