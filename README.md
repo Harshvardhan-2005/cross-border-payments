@@ -11,8 +11,11 @@ A web application to **convert INR to USDC** and generate a **Solana Pay QR code
 
 ## 🚀 Demo
 
-![Demo GIF](link-to-demo-gif)  
-_(Optional: Add a GIF showing QR generation)_
+![Demo GIF] 
+
+https://github.com/user-attachments/assets/e904da5a-d266-4782-901d-2191eb2da595
+
+dbcf8-2663-45db-b5c1-c8126488d23c
 
 ## 🖥 Tech Stack
 
